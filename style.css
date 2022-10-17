@@ -2,15 +2,22 @@
     --mainBackground: #e3e1ff;
     --accentBackground: #ffffff;
 }
+/*Creating 1920x1080 screen media querie*/
+@media only screen and (max-width: 1920px) {
 body {
     color: #000000;
+    margin: auto;
 }
 .background {
     /* background: linear-gradient(to bottom, var(--mainBackground), var(--accentBackground));
     background-attachment: fixed; */
     background-image: url("/barrin-the-archmage-tribute-page/images/barrin-academy-castle.jpg");
-    min-height: 100vh;
-    min-width: 100vw;
+    height: 100vh;
+    width: 100vw;
+    filter: blur(2px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
 }
 #main {
     display: flex !important;
@@ -19,17 +26,22 @@ body {
     min-width: 100%;
     text-align: center;
     align-items: center;
+    z-index: 2;
+    position: relative;
 }
 .main-heading-box{
     font-weight: bold;
     background-color: var(--accentBackground);
-    padding: 0% 4.5% 2.4% 4.5%;
+    padding: 1% 4.5% 2.4% 4.5%;
     border-radius: 2em;
     box-shadow: black 2px 2px 2px;
-}
+    margin-top: 3vh;
+    padding: 1%;
+  }
 #title {
     font-family: 'Lora';
     font-size: 4em;
+    margin: auto;
 }
 p {
     font-style: italic;
@@ -38,41 +50,34 @@ p {
     color: rgb(0, 26, 255);
 }
 
-#img-div {
-    display: flex !important;
-    flex-direction: column;
-    height: auto;
-    width: 40%;
+.frame {
     min-width: 800px;
     margin-top: 2%;
-    padding-top: 20px;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.6);
-    box-shadow: 1px 1px 2px;
 }
-#image {
-    width: 85%;
-    max-width: 600px;
-    height: auto;
-    margin: auto 25px;
-    border: ridge white 5px;
-    border-radius: 1%;
-/*     box-shadow: black 6px 6px 6px; */
+#barrin-profile-pic {
+    width: 26vw;
+    height: 37vw;
+    border-radius: 1em;
+    box-shadow: black 2px 2px 2px;
+    margin-bottom: 2.5vh;
+    transition: 500ms;
 }
-#img-caption{
-    
-    padding: 20px 10px 20px 10px;
-    font-size: 16px;
-    color: black;
+#barrin-profile-pic:hover {
+    transform: scale(1.05);
+}
+.caption{
+    padding: 1.2em;
+    font-size: 1em;
+    color: white;
     font-family: 'Alegreya';
-/*     background-color: black; */
-/*     opacity: 0.5; */
+    background-color: black;
+    border-radius: 2em;
+    margin-top: 1.3vh;
 }
 h2 {
     padding: 5px;
     font-family: 'Lora';
     font-size: 32px;
-    font-weight: 100px;
     text-shadow: 2px 2px #000000;
     color: white;
 /*     border-top: groove black 5px; */
@@ -115,4 +120,5 @@ ul:hover{
   color: cyan;
   border-radius: 4%;
   font-style: italic;
+}
 }
